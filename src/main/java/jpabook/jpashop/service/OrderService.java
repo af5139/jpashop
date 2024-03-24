@@ -30,7 +30,9 @@ public class OrderService {
 
         //엔티티 조회
         Member member = memberRepository.findOne(memberId);
+
         Item item = itemRepository.findOne(itemId);
+        //Item item2 = itemRepository.findOne(2L);
 
         //배송정보 생성
         Delivery delivery = new Delivery();
@@ -38,7 +40,8 @@ public class OrderService {
 
         //주문상품 생성
         OrderItem orderItem = OrderItem.createOrderItem(item, item.getPrice(), count);
-        
+        //OrderItem orderItem2 = OrderItem.createOrderItem(item2, item2.getPrice(), 3);
+
         //주문 생성
         Order order = Order.createOrder(member, delivery, orderItem);
 
